@@ -1,0 +1,26 @@
+{
+  "name": "cordova-plugin-jshare",
+  "version": "1.0.0",
+  "description": "JShare Cordova Plugin.",
+  "cordova": {
+    "id": "cordova-plugin-jshare",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpush/cordova-plugin-jshare.git"
+  },
+  "keywords": [
+    "jshare",
+    "share"
+  ],
+  "author": "JiGuang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpush/cordova-plugin-jshare/issues"
+  },
+  "homepage": "https://github.com/jpush/cordova-plugin-jshare#readme"
+}
