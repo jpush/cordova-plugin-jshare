@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DevInfor>
+
+    <!-- 如果不需要支持某平台，可缺省该平台的配置-->
+
+    <SinaWeibo
+        AppKey="新浪微博的 AppKey"
+        AppSecret="新浪微博的 AppSecret"/>
+
+    <QQ
+        AppId="QQ 的 AppId"
+        AppKey="QQ 的 AppKey"/>
+
+    <Wechat
+        AppId="微信的 AppId"
+        AppSecret="微信的 AppSecret"/>
+</DevInfor>

@@ -12,8 +12,8 @@
 
     <preference name="APP_KEY" />
 
-    <js-module src="www/JSharePlugin.js" name="JSharePlugin">
-        <clobbers target="jsms"/>
+    <js-module src="www/JSharePlugin.js" name="JShare">
+        <clobbers target="jshare"/>
     </js-module>
 
     <engines>
@@ -23,7 +23,7 @@
     <platform name="android">
       <config-file target="res/xml/config.xml" parent="/*">
         <feature name="JSharePlugin">
-          <param name="android-package" value="cn.jiguang.jshare.JSharePlugin" />
+          <param name="android-package" value="cn.jiguang.share.JSharePlugin" />
         </feature>
       </config-file>
 
@@ -43,6 +43,37 @@
       </config-file>
 
       <config-file name="AndroidManifest.xml" parent="/manifest/application">
+        <!-- Required SDK核心功能-->
+        <activity
+            android:name="cn.jiguang.share.android.ui.JiguangShellActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <!-- Optional QQ分享回调-->
+            <!-- scheme为“tencent”前缀再加上QQ开发者应用的appID；例如appID为123456，则scheme＝“tencent123456” -->
+            <intent-filter>
+              <data android:scheme="tencent+appID" />
+              <action android:name="android.intent.action.VIEW" />
+
+              <category android:name="android.intent.category.BROWSABLE" />
+              <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- Optional 新浪微博分享回调 -->
+            <intent-filter>
+              <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+              <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Optional 微信分享回调,wxapi必须在包名路径下，否则回调不成功-->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true" />
+
         <!-- Required. For publish channel feature.
              JPUSH_CHANNEL 是为了方便开发者统计APK分发渠道。
              例如:
@@ -63,6 +94,8 @@
       <source-file src="src/android/libs/jshare-qq-android-v1.0.0.jar" target-dir="libs"/>
       <source-file src="src/android/libs/jshare-sina-android-v1.0.0.jar" target-dir="libs"/>
       <source-file src="src/android/libs/jshare-wechat-android-v1.0.0.jar" target-dir="libs"/>
+
+      <source-file src="src/android/WXEntryActivity.java" target-dir="/src/"/>
     </platform>
 
     <platform name="ios">

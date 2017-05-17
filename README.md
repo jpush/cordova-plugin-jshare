@@ -8,8 +8,14 @@ JPush 官方支持的社交分享 Cordova 插件，具备国内主流社交平�
 - 一键分享。支持对新浪微博、QQ、微信等社会化平台一键分享；分享内容包括文字、图片、链接、音视频、文件、表情等。
 
 ## Install
+```
+cordova plugin add cordova-plugin-jshare --variable APP_KEY=your_app_key
+```
 
 ## Usage
+### Android
+
+### iOS
 
 ## FAQ
 
