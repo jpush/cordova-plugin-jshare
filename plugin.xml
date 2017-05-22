@@ -12,7 +12,9 @@
 
     <preference name="APP_KEY" />
 
-    <js-module src="www/JSharePlugin.js" name="JShare">
+    <dependency id="cordova-plugin-jcore" />
+
+    <js-module src="www/JSharePlugin.js" name="JSharePlugin">
         <clobbers target="jshare"/>
     </js-module>
 
@@ -99,5 +101,24 @@
     </platform>
 
     <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="JSharePlugin">
+                <param name="ios-package" value="JSharePlugin" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/lib/JSHAREService.h" />
+        <source-file src="src/ios/lib/jshare-ios-1.0.0.a" framework="true" />
+
+        <framework src="UIKit.framework" weak="true" />
+        <framework src="SystemConfiguration.framework" weak="true" />
+        <framework src="CoreTelephony.framework" weak="true" />
+        <framework src="Security.framework" weak="true" />
+        <framework src="Foundation.framework" weak="true" />
+        <framework src="CoreLocation.framework" weak="true" />
+        <framework src="CoreFoundation.framework" weak="true" />
+        <framework src="CFNetwork.framework" weak="true" />
+        <framework src="libz.tbd.framework" weak="true" />
+        <framework src="libresolv.tbd.framework" weak="true" />
     </platform>
 </plugin>

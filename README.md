@@ -1,5 +1,5 @@
 # cordova-plugin-jshare
-JPush 官方支持的社交分享 Cordova 插件，具备国内主流社交平台分享功能，提供接入新浪微博，QQ，微信等第三方社会化分享服务，同时支持 Android 与 iOS 平台。
+JPush 官方支持的社交分享 Cordova 插件，具备国内主流社交平台分享功能，提供接入新浪微博、QQ、微信等第三方社会化分享服务，同时支持 Android 与 iOS 平台。
 
 功能特性：
 - 集成简单。
