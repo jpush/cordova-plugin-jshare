@@ -2,37 +2,38 @@ var exec = require('cordova/exec')
 var PLUGIN_NAME = 'JSharePlugin'
 
 var JShare = {
-  init: function(cb) {
+  init: function (cb) {
     exec(cb, null, PLUGIN_NAME, 'init', [])
   },
-  setDebugModel: function(enable, cb) {
-    exec(cb, null, PLUGIN_NAME, 'setDebugModel', [enable])
+  setDebugMode: function (enable, cb) {
+    exec(cb, null, PLUGIN_NAME, 'setDebugMode', [enable])
   },
-  getPlatformList: function(cb) {
+  getPlatformList: function (cb) {
     exec(cb, null, PLUGIN_NAME, 'getPlatformList', [])
   },
-  isClientValid: function(platform, cb) {
-    exec(cb, null, PLUGIN_NAME, 'isClientValid', [platform])
+  isPlatformValid: function (platform, cb) {
+    exec(cb, null, PLUGIN_NAME, 'isPlatformValid', [platform])
   },
-  share: function(platform, shareParams, cb) {
-    exec(cb, null, PLUGIN_NAME, 'share', [platform, shareParams])
+  share: function (platform, shareParams, cb) {
+    var shareParamsJson = JSON.stringify(shareParams)
+    exec(cb, null, PLUGIN_NAME, 'share', [platform, shareParamsJson])
   }
 }
 
 var Platform = {
-  WeChat: "Wechat.Name",
-  WeChatMoments: "WechatMoments.Name",
-  WeChatFavorite: "WechatFavorite.Name",
-  SinaWeibo: "SinaWeibo.Name",
-  QQ: "QQ.Name",
-  QZone: "QZone.Name"
+  WeChat: 'WeChat',
+  WeChatMoments: 'WeChatMoments',
+  WeChatFavorite: 'WeChatFavorite',
+  SinaWeibo: 'SinaWeibo',
+  QQ: 'QQ',
+  QZone: 'QZone'
 }
 
 var ShareParams = {
   shareType: null,
   text: null,
-  imagePath: null,
   title: null,
+  imagePath: null,
   musicUrl: null,
   url: null,
   filePath: null
