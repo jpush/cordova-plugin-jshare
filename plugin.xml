@@ -25,7 +25,7 @@
     <platform name="android">
       <config-file target="res/xml/config.xml" parent="/*">
         <feature name="JSharePlugin">
-          <param name="android-package" value="cn.jiguang.share.JSharePlugin" />
+          <param name="android-package" value="cn.jiguang.cordova.share.JSharePlugin" />
         </feature>
       </config-file>
 
@@ -97,7 +97,7 @@
       <source-file src="src/android/libs/jshare-sina-android-v1.0.0.jar" target-dir="libs"/>
       <source-file src="src/android/libs/jshare-wechat-android-v1.0.0.jar" target-dir="libs"/>
 
-      <source-file src="src/android/WXEntryActivity.java" target-dir="/src/"/>
+      <source-file src="src/android/JSharePlugin.java" target-dir="/src/cn/jiguang/cordova/share"/>
     </platform>
 
     <platform name="ios">
