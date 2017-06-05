@@ -22,7 +22,7 @@ cordova plugin add cordova-plugin-jshare --variable APP_KEY=your_app_key
 ## Support
 - QQ 群：413602425
 - [JPush 官网文档](https://docs.jiguang.cn/jshare/guideline/intro/)
-- [极光社区](http://community.jiguang.cn/)
+<!-- - [极光社区](http://community.jiguang.cn/) -->
 
 ## Contribute
 Please contribute! [Look at the issues](https://github.com/jpush/cordova-plugin-jshare/issues).
