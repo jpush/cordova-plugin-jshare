@@ -22,7 +22,7 @@
       "version": ">=3.0"
   }],
   "dependencies": {
-      "cordova-plugin-jcore": "1.1.4"
+      "cordova-plugin-jcore": "*"
   },
   "author": "JiGuang",
   "license": "MIT",
